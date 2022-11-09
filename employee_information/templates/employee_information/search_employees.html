@@ -1,0 +1,20 @@
+{% extends 'employee_information/base.html' %}
+
+{% block pageContent %}
+
+    <justify>
+    {% if searched %}
+    <div class="d-flex justify-content-between">
+        <h4>You searched for {{ searched }}</h4>
+    </div>
+        <br/>
+        {% for employees in employees %}
+            {{ employees }} - {{ employees.position_id }} - {{ employees.department_id }} - {{ employees.email }} - {{ employees.salary }}<br/>
+        {% endfor %}
+    {% else %}
+        <h1>Hey! You forgot to search for an employee...</h1>
+    {% endif %}
+
+    </justify>
+
+{% endblock %}
